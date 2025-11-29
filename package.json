@@ -1,0 +1,70 @@
+{
+  "name": "DFU",
+  "displayName": "DFU Integration Assistant",
+  "description": "Chat participant for DMIU (Development Feature Unlocking) integration guidance",
+  "version": "0.0.1",
+  "publisher": "tttech-auto",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tttech-auto/dfu-assistant"
+  },
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "activationEvents": [
+    "onLanguageModelTool:dfu_assistant"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "dfu.assistant",
+        "name": "dfu",
+        "description": "DMIU/DFU integration assistant for creating platform-specific integration code",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "integrate",
+            "description": "Start interactive DMIU integration for a platform (posix/autosar)"
+          },
+          {
+            "name": "validate",
+            "description": "Validate current DMIU integration completeness"
+          },
+          {
+            "name": "adapter",
+            "description": "Generate adapter function for a specific user function"
+          }
+        ]
+      }
+    ],
+    "authentication": [
+      {
+        "id": "github",
+        "label": "GitHub"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.106.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}

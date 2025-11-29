@@ -1,0 +1,25 @@
+# Build output
+out
+dist
+*.vsix
+
+# Node modules
+node_modules
+
+# VS Code test
+.vscode-test/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backup files
+*.backup
+src/extension.ts.backup
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
