@@ -2,7 +2,7 @@
   "name": "DFU",
   "displayName": "DFU Integration Assistant",
   "description": "Chat participant for DMIU (Development Feature Unlocking) integration guidance",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "tttech-auto",
   "repository": {
     "type": "git",
